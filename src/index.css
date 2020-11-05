@@ -1,0 +1,32 @@
+.html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.map {
+  display: block;
+  height: 800px;
+  width: 800px;
+}
+/* .map img {
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+} */
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.square {
+  height: 16px;
+  min-width: 16px;
+}

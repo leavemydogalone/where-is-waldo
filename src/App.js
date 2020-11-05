@@ -1,28 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import firebase from './firebase';
+// import firebase from './firebase';
+import Navigation from './components/Navigation';
+import Central from './components/Central';
+import Map from './components/Map';
 
 function App() {
-  const [people, setPeople] = useState([]);
+  const [people, setPeople] = useState({});
+  const [currentMap, setCurrentMap] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const ref = firebase.firestore().collection('People');
-  console.log(ref);
-
-  function getPeople() {
-    setLoading(true);
-    ref.onSnapshot((querySnapShot) => {
-      const items = [];
-      querySnapShot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setPeople(items);
-      setLoading(false);
-    });
-  }
-
-  useEffect(() => {
-    getPeople();
-  }, []);
 
   if (loading) {
     return <h1>loading...</h1>;
@@ -31,12 +16,9 @@ function App() {
   return (
     <div className="App">
       hi
-      {people.map((person, index) => (
-        <div key={index}>
-          <h2>{person.name}</h2>
-          <p>{person.location.join(' ')}</p>
-        </div>
-      ))}
+      <Navigation />
+      <Central setPeople={setPeople} setCurrentMap={setCurrentMap} />
+      <Map currentMap={currentMap} />
     </div>
   );
 }
