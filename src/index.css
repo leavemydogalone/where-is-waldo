@@ -12,21 +12,17 @@ body {
 .map {
   display: block;
   height: 800px;
-  width: 800px;
+  width: 1200px;
 }
-/* .map img {
-  background-size: cover;
-  position: relative;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-} */
+
 .container {
   display: flex;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 }
 .square {
   height: 16px;
   min-width: 16px;
+  color: rgba(255, 0, 0, 0.192);
 }

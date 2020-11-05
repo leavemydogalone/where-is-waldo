@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 // import firebase from './firebase';
 import Navigation from './components/Navigation';
 import Central from './components/Central';
-import Map from './components/Map';
 
 function App() {
   const [people, setPeople] = useState({});
@@ -17,8 +16,11 @@ function App() {
     <div className="App">
       hi
       <Navigation />
-      <Central setPeople={setPeople} setCurrentMap={setCurrentMap} />
-      <Map currentMap={currentMap} />
+      <Central
+        setPeople={setPeople}
+        setCurrentMap={setCurrentMap}
+        currentMap={currentMap}
+      />
     </div>
   );
 }
