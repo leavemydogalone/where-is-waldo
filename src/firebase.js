@@ -16,8 +16,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// console.log(storageRef);
-// console.log(peopleRef);
 export const getMap = (callback, map) => {
   const storage = firebase.storage();
   const storageRef = storage.ref(map);

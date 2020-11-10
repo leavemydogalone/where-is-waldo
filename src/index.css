@@ -11,18 +11,49 @@ body {
 }
 .map {
   display: block;
-  height: 800px;
+  height: 900px;
   width: 1200px;
+  background-repeat: no-repeat;
+  background-size: 1200px 900px;
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  width: 100%;
+  display: block;
+  height: 900px;
+  width: 1200px;
+  padding: 0px;
+  margin: 0px;
 }
 .square {
-  height: 16px;
-  min-width: 16px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
   color: rgba(255, 0, 0, 0.192);
+  margin: 0px;
+  padding: 0px;
 }
+
+.square #selected {
+  -webkit-box-shadow: inset 0px 0px 0px 10px #f00;
+  -moz-box-shadow: inset 0px 0px 0px 10px #f00;
+  box-shadow: inset 0px 0px 0px 10px #f00;
+}
+.popUp {
+  display: block;
+  position: relative;
+  right: 15px;
+  height: 150px;
+  width: 150px;
+  margin: 0px;
+  padding: 0px;
+  z-index: 999;
+  background-color: white;
+  color: black;
+  border: solid 2px black;
+}
+
+/* div[role='button']:focus {
+  -webkit-box-shadow: inset 0px 0px 0px 2px #f00;
+  -moz-box-shadow: inset 0px 0px 0px 2px #f00;
+  box-shadow: inset 0px 0px 0px 2px #f00;
+} */

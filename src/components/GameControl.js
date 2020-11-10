@@ -3,7 +3,7 @@ import { getPeople, getMap } from '../firebase';
 
 export default function GameControl({ setPeople, setCurrentMap }) {
   function GameSet() {
-    getPeople(setPeople, 'beach');
+    getPeople(setPeople, 'ski');
     getMap(setCurrentMap, 'waldo_ski.jpg');
   }
 
