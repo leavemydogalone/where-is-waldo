@@ -1,4 +1,3 @@
-import { computeHeadingLevel } from '@testing-library/react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/storage';
@@ -15,14 +14,21 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
 
-export const getMap = (callback, map) => {
-  const storage = firebase.storage();
-  const storageRef = storage.ref(map);
-  storageRef
+export const setCharImgs = (thing, img) => {
+  const charRef = storage.ref(img);
+  charRef.getDownloadURL().then((url) => {
+    thing.url = url;
+  });
+};
+
+export const getMap = (callBack, map) => {
+  const mapRef = storage.ref(map);
+  mapRef
     .getDownloadURL()
     .then((url) => {
-      callback(url);
+      callBack(url);
     })
     .catch(function (error) {
       // A full list of error codes is available at

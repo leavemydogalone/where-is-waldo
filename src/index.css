@@ -40,11 +40,10 @@ body {
 }
 .popUp {
   display: block;
-  position: relative;
-  right: 15px;
-  height: 150px;
+  position: absolute;
+  height: 175px;
   width: 150px;
-  margin: 0px;
+  margin-left: 60px;
   padding: 0px;
   z-index: 999;
   background-color: white;
@@ -52,8 +51,7 @@ body {
   border: solid 2px black;
 }
 
-/* div[role='button']:focus {
-  -webkit-box-shadow: inset 0px 0px 0px 2px #f00;
-  -moz-box-shadow: inset 0px 0px 0px 2px #f00;
-  box-shadow: inset 0px 0px 0px 2px #f00;
-} */
+.popUp img {
+  height: 50px;
+  width: 50px;
+}

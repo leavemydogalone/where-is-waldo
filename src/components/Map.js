@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Square from './Square';
 
-export default function Map({ currentMap }) {
-  // make the array a state that gets filled when the component mounts. put a load thign.
-
+export default function Map({ currentMap, characters }) {
   const makeGrid = () => {
     const newG = [];
     for (let i = 0; i < 432; i += 1) {
@@ -26,6 +24,7 @@ export default function Map({ currentMap }) {
       id={index}
       selected={thing.selected}
       setSelected={setSelected}
+      characters={characters}
     />
   ));
   return (

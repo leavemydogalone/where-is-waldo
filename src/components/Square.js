@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PopUp from './PopUp';
 
-export default function Square({ id, setSelected, selected }) {
+export default function Square({ id, setSelected, selected, characters }) {
   const [children, setChildren] = useState([]);
 
   function handleClick(event) {
-    setChildren([...children, <PopUp />]);
-    setSelected(event.target);
+    if (event.target.id) {
+      setSelected(event.target);
+    }
   }
+  useEffect(() => {
+    if (selected) setChildren([<PopUp characters={characters} />]);
+  }, [selected]);
 
   return (
     <div
